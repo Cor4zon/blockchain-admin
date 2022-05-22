@@ -7,13 +7,13 @@ import "./MainContent.css";
 const MainContent = () => {
     return (
         <div className="content">
-            <Link to="voting">
+            <Link to="voting" className="action-link add-voting">
                 <ActionCard text={"Создать голосование"} />
             </Link>
-            <Link to="voter">
+            <Link to="voter" className="action-link add-option">
                 <ActionCard text={"Добавить кандидатов"} />
             </Link>
-            <Link to="voting_option">
+            <Link to="voting_option" className="action-link add-voter">
                 <ActionCard text={"Добавить голосующих"} />
             </Link>
         </div>
