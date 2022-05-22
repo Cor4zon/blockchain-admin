@@ -1,0 +1,19 @@
+
+.voting-card {
+    display: inline-flex;
+    flex-direction: column;
+    width: 30%;
+
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-left: 2rem;
+
+    background-image: url("../../../../public/vote.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.voting-card__link {
+    margin-left: 1rem;
+}
