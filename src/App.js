@@ -1,13 +1,14 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
-
+import './App.css'
 
 const App = () => {
     return (
         <div>
 
-            <Link to="/">
-                <h1>Blockchain voting</h1>
+            <Link to="/" className="logo-container">
+                <i className="fa-solid fa-dove"></i>
+                <h1>Freedom e-voting</h1>
             </Link>
 
             <Outlet />
