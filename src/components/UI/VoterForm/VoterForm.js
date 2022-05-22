@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import APIClient from "../../../services/APIClient";
 
+import "./VoterForm.css";
+
 const VoterForm = ({ voting }) => {
     const [ pubkey, setPubkey ] = useState("");
     const client = new APIClient();
@@ -18,12 +20,11 @@ const VoterForm = ({ voting }) => {
 
     return (
         <>
-            <form>
+            <form className="voter-form">
                 <label>
-                    public key:
-                    <input type="text" name="name" onChange={ pubkeyChangeHandler } />
+                    <input type="text" name="name" onChange={ pubkeyChangeHandler } placeholder="Voter public key"/>
                 </label>
-                <input type="submit" value="Submit" onClick={ addVoterHandler }/>
+                <input id="submit" type="submit" value="Add Voter" onClick={ addVoterHandler }/>
             </form>
         </>
     );

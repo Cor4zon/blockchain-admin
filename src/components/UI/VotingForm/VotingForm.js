@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import APIClient from "../../../services/APIClient";
 
+import "./VotingForm.css";
+
 const VotingForm = () => {
     const [ title, setTitle ] = useState("");
     const [ description, setDescription ] = useState("");
@@ -29,21 +31,18 @@ const VotingForm = () => {
     }
 
     return (
-        <div>
-            <form>
+        <div className="voting-form__container">
+            <form className="voting-form">
                 <label>
-                    Title:
-                    <input type="text" name="name" onChange={ titleChangeHandler } />
+                    <input type="text" name="name" onChange={ titleChangeHandler } placeholder="Title"/>
                 </label>
                 <label>
-                    Desription:
-                    <input type="text" name="name" onChange={ descriptionChangeHandler } />
+                    <input type="text" name="name" onChange={ descriptionChangeHandler } placeholder="Desription"/>
                 </label>
                 <label>
-                    Deadline:
-                    <input type="date" name="name"  onChange={ deadlineChangeHandler } />
+                    <input type="date" name="name"  onChange={ deadlineChangeHandler } placeholder="Deadline"/>
                 </label>
-                <input type="submit" value="Submit" onClick={ addVotingHandler }/>
+                <input id="submit" type="submit" value="Add Voting" onClick={ addVotingHandler }/>
             </form>
         </div>
     );

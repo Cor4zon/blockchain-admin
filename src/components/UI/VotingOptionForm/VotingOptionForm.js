@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import APIClient from "../../../services/APIClient";
 
+import "./VotingOptionForm.css";
+
 const VotingOption = ({ voting }) => {
     const [ pubkey, setPubkey ] = useState("");
     const [ privkey, setPrivkey ] = useState("");
@@ -35,25 +37,21 @@ const VotingOption = ({ voting }) => {
 
     return (
         <>
-            <form>
+            <form className="voting-option-form">
                 <label>
-                    Title:
-                    <input type="text" name="name" onChange={ titleChangeHandler } />
+                    <input type="text" name="name" onChange={ titleChangeHandler } placeholder="Title" />
                 </label>
                 <label>
-                    Description:
-                    <input type="text" name="name" onChange={ descriptionChangeHandler } />
+                    <input type="text" name="name" onChange={ descriptionChangeHandler } placeholder="Description" />
                 </label>
                 <label>
-                    Public key:
-                    <input type="text" name="name" onChange={ pubkeyChangeHandler } />
+                    <input type="text" name="name" onChange={ pubkeyChangeHandler } placeholder="Candidate public key" />
                 </label>
                 <label>
-                    Private key:
-                    <input type="text" name="name" onChange={ privkeyChangeHandler } />
+                    <input type="text" name="name" onChange={ privkeyChangeHandler } placeholder="Candidate private key" />
                 </label>
 
-                <input type="submit" value="Submit" onClick={ addVotingOptionHandler }/>
+                <input id="submit" type="submit" value="Add Candidate" onClick={ addVotingOptionHandler }/>
             </form>
         </>
     );
