@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-
-import APIClient from "../../../services/APIClient";
 import VotingCard from "../VotingCard/VotingCard";
-import VoterForm from "../../UI/VoterForm/VoterForm";
-import VotingOptionForm from "../../UI/VotingOptionForm/VotingOptionForm";
+import APIClient from "../../services/APIClient";
 
 const VotingInfo = () => {
     let params = useParams();
@@ -25,10 +22,10 @@ const VotingInfo = () => {
             <VotingCard voting={voting} />
 
             <p>Добавить кандидата</p>
-            <VotingOptionForm voting={+params.voting_id} />
+            {/*<VotingOptionForm voting={+params.voting_id} />*/}
 
             <p>Добавить избирателя</p>
-            <VoterForm voting={+params.voting_id} />
+            {/*<VoterForm voting={+params.voting_id} />*/}
 
         </div>
     );

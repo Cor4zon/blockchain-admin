@@ -6,9 +6,11 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import APIClient from "../../../services/APIClient";
+import APIClient from "../../services/APIClient";
 
-export default function FormDialog() {
+import "./VotingFormDialog.css";
+
+export default function VotingFormDialog() {
     const [open, setOpen] = React.useState(false);
     const [ title, setTitle ] = React.useState("");
     const [ description, setDescription ] = React.useState("");
@@ -47,9 +49,9 @@ export default function FormDialog() {
     }
 
     return (
-        <div>
+        <div className="form-dialog__container">
             <Button variant="outlined" onClick={handleClickOpen}>
-                Open form dialog
+                Add New Voting
             </Button>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>New voting</DialogTitle>

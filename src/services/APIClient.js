@@ -1,5 +1,3 @@
-"use strict";
-
 import AxiosWrapper from "./AxiosWrapper";
 import Storage from "./Storage";
 

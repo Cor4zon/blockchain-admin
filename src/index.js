@@ -2,14 +2,13 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 
-import VotingForm from './components/UI/VotingForm/VotingForm';
 import VoterForm from "./components/UI/VoterForm/VoterForm";
 import VotingOptionForm from "./components/UI/VotingOptionForm/VotingOptionForm";
 
 import MainContent from "./components/UI/MainContent/MainContent";
 import VotingList from "./components/VotingList/VotingList";
-import Voting from "./components/VotingList/Voting/Voting";
-import VotingInfo from "./components/VotingList/VotingInfo/VotingInfo";
+import Voting from "./components/Voting/Voting";
+import VotingInfo from "./components/VotingInfo/VotingInfo";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root")

@@ -1,5 +1,3 @@
-"use strict";
-
 class Storage {
     constructor(storage) {
         this.storage = storage;
