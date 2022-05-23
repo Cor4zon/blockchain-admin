@@ -3,6 +3,10 @@ import React, { useState, useEffect } from 'react';
 import APIClient from "../../services/APIClient";
 import VotingCard from './VotingCard/VotingCard'
 import VotingForm from "../UI/VotingForm/VotingForm";
+import './FormDialog/FormDialog';
+
+import './VotingList.css';
+import FormDialog from "./FormDialog/FormDialog";
 
 const VotingList = () => {
     const [ votings, setVotings ] = useState([]);
@@ -20,7 +24,9 @@ const VotingList = () => {
                 return <VotingCard key={voting.id} voting={voting} />
             }) }
 
-            <VotingForm />
+            <FormDialog />
+            <button onClick="displayVotingForm" className="border-black txt-white bkgnd-black border-radius-5px no-shadow hover-white" id="add-btn">Add Voting</button>
+            {/*<VotingForm />*/}
         </div>
     );
 };
