@@ -80,7 +80,6 @@ export default function FormDialog() {
                     <TextField
                         margin="dense"
                         id="name"
-                        label="deadline"
                         type="date"
                         fullWidth
                         variant="standard"
