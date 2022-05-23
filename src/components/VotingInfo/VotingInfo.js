@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import VotingCard from "../VotingCard/VotingCard";
 import APIClient from "../../services/APIClient";
+import VoterFormDialog from "../VoterFormDialog/VoterFormDialog";
+import VotingOptionFormDialog from "../VotingOptionFormDialog/VotingOptionFormDialog";
 
 const VotingInfo = () => {
     let params = useParams();
@@ -15,17 +17,17 @@ const VotingInfo = () => {
             const voting = votings.filter(item => item.id === +params.voting_id);
             setVoting(voting[0])
         });
-    }, [voting]);
+    }, []);
 
     return (
         <div>
             <VotingCard voting={voting} />
 
             <p>Добавить кандидата</p>
-            {/*<VotingOptionForm voting={+params.voting_id} />*/}
+            <VotingOptionFormDialog votingId={voting.id} />
 
             <p>Добавить избирателя</p>
-            {/*<VoterForm voting={+params.voting_id} />*/}
+            <VoterFormDialog votingId={voting.id} />
 
         </div>
     );

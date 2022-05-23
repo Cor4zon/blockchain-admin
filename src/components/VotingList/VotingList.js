@@ -14,7 +14,7 @@ const VotingList = () => {
         client.fetchVotings().then((result) => {
             setVotings(result.data)
         });
-    }, [votings]);
+    }, []);
 
     return (
         <div>
