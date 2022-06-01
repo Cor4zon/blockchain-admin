@@ -60,7 +60,7 @@ export default function VoterFormDialog({ votingId }) {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={addVoterHandler}>Add voting</Button>
+                    <Button onClick={addVoterHandler}>Add voter</Button>
                 </DialogActions>
             </Dialog>
         </div>

@@ -58,7 +58,7 @@ export default function VotingOptionFormDialog({ votingId }) {
                 Add New Candidate
             </Button>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>New voting</DialogTitle>
+                <DialogTitle>New Candidate</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
                         Please, enter all information about voting option:
@@ -104,7 +104,7 @@ export default function VotingOptionFormDialog({ votingId }) {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={addVotingOptionHandler}>Add voting</Button>
+                    <Button onClick={addVotingOptionHandler}>Add candidate</Button>
                 </DialogActions>
             </Dialog>
         </div>
