@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import APIClient from "../../../services/APIClient";
 
 import "./VotingOptionForm.css";
+import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 
-const VotingOption = ({ voting }) => {
+const VotingOption = () => {
+    const [ voting, setVoting ] = useState("");
+    const [ votingsList, setVotingList ] = useState([]);
     const [ pubkey, setPubkey ] = useState("");
     const [ privkey, setPrivkey ] = useState("");
     const [ title, setTitle ] = useState("");
@@ -35,9 +38,41 @@ const VotingOption = ({ voting }) => {
         });
     }
 
+    useEffect(() => {
+        const votingsList = [];
+
+        client.fetchVotings().then((result) => {
+            for (let voting of result.data) {
+                votingsList.push([voting.title, voting.id]);
+            }
+
+            setVotingList([...votingsList]);
+        })
+    }, []);
+
+    const selectVotingHandler = (event) => {
+        setVoting(event.target.value);
+    }
+
     return (
         <>
             <form className="voting-option-form">
+                <FormControl fullWidth>
+                    <InputLabel id="select-label">Voting</InputLabel>
+                    <Select
+                        id="selected-voting"
+                        value={voting}
+                        label="Voting"
+                        onChange={selectVotingHandler}
+                    >
+                        {
+                            votingsList.map((item, index) => {
+                                return <MenuItem key={index} value={item[1]}> { item[0] } </MenuItem>;
+                            })
+                        }
+                    </Select>
+                </FormControl>
+
                 <label>
                     <input type="text" name="name" onChange={ titleChangeHandler } placeholder="Title" />
                 </label>
