@@ -1,6 +1,11 @@
-
-
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+
+.toast-container {
+    width: 100px;
+    height: 200px;
+    position: absolute;
+}
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: #aca49c;

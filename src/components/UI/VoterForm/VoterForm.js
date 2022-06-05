@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import APIClient from "../../../services/APIClient";
-
-import "./VoterForm.css";
 import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
+
+import APIClient from "../../../services/APIClient";
+import "./VoterForm.css";
 
 const VoterForm = () => {
     const [ votingsList, setVotingList ] = useState([]);
@@ -19,7 +19,11 @@ const VoterForm = () => {
         client.addVoter(pubkey, voting).then(() => {
             console.log(`pubkey: ${pubkey}, voting: ${voting}`);
             console.log('voter added');
+
         });
+        setPubkey("");
+        setVoting("");
+
     }
 
     useEffect(() => {
@@ -40,6 +44,7 @@ const VoterForm = () => {
 
     return (
         <>
+
             <form className="voter-form">
                 <FormControl fullWidth>
                     <InputLabel id="select-label">Voting</InputLabel>
@@ -58,9 +63,10 @@ const VoterForm = () => {
                 </FormControl>
 
                 <label>
-                    <input type="text" name="name" onChange={ pubkeyChangeHandler } placeholder="Voter public key"/>
+                    <input type="text" value={pubkey} name="name" onChange={ pubkeyChangeHandler } placeholder="Voter public key"/>
                 </label>
                 <input id="submit" type="submit" value="Add Voter" onClick={ addVoterHandler }/>
+
             </form>
         </>
     );

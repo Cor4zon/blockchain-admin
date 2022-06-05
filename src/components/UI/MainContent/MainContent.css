@@ -5,7 +5,7 @@
     background: ghostwhite;
 
     display: flex;
-    justify-content: center;
+    justify-content:  space-around;
 }
 
 
